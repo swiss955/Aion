@@ -1,0 +1,5015 @@
+#COMBAT ROUTINE VER 1.54
+#IF=%FirstTime,;
+#SmoothBackground
+UseSpeed=1;
+#UseGravity
+#UseCollision
+#UseLoop
+Command=;
+#NeedResolution=816,638;
+Delay=300;
+#NeedResolution=816,638;
+#DisableScrolling
+RequireVersion=3.93;
+#EnableChatLog
+#ClearChatLog
+_SetVar2=0;
+_SetVar3=0;
+_SetVar4=0;
+_SetVar19=0;
+#UseIDPerformance
+
+_SetVar5=0;
+_SetArray2=None,None;
+
+#SmoothBackground
+#UseMiol
+Delay=250;
+#UseMiol
+Command=;
+#ShowLog
+MemWrite=%AddrFreeMem4,%Var4,BYTE;
+MemWrite=%AddrFreeMem2,%Var5,BYTE;
+MemWrite=%AddrFreeMem6,0,BYTE;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#SmartSkillPerformance
+EXECUTE=Return; <-- add a "#" to the beginning of the line to start from obelisk
+#ENDIF
+
+_IFMemRead=%AddrPet,BYTE,65-122; <-- If pet outside
+_SetVar16=1;
+MemWrite=%AddrFreeMem16,%Var16,BYTE;
+#ELSE
+_SetVar16=0;
+MemWrite=%AddrFreeMem16,%Var16,BYTE;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem16,BYTE,=1;
+#EXECUTE=ActivateLootPet;
+#ENDIF
+
+#EXECUTE=CheckDead;
+
+_IFMemRead=%AddrFreeMem2,BYTE,=1;
+_MemPtrReadVar=%AddrMaxSlots,%OffsetMaxSlots,BYTE,6;
+_Calc6=%Var6-5;
+_IFMemPtrRead=%AddrSlots,%OffsetSlots,BYTE,>%Var6;
+#EXECUTE=InventoryCheck;
+#ENDIF
+
+#EXECUTE=Route;
+
+start_Route;
+
+Command=/select Fragment of Immortal Light;
+Delay=500;
+Command=/attack;
+Delay=2500;
+Mouse=273,264;
+#ENDIF
+_IFQuestInventoryContains=182215957,10;
+MoveSmooth=1572,1152;
+MoveSmooth=1570,1157;
+#EXECUTE=Deathcheck;
+MoveSmooth=1568,1162;
+MoveSmooth=1567,1168;
+MoveSmooth=1565,1173;
+MoveSmooth=1564,1179;
+MoveSmooth=1562,1184;
+MoveSmooth=1560,1190;
+MoveSmooth=1558,1195;
+MoveSmooth=1555,1200;
+MoveSmooth=1552,1205;
+MoveSmooth=1548,1210;
+MoveSmooth=1545,1214;
+MoveSmooth=1541,1219;
+MoveSmooth=1538,1223;
+MoveSmooth=1534,1228;
+MoveSmooth=1531,1233;
+MoveSmooth=1528,1238;
+MoveSmooth=1525,1243;
+MoveSmooth=1521,1247;
+MoveSmooth=1518,1252;
+MoveSmooth=1515,1257;
+MoveSmooth=1511,1262;
+MoveSmooth=1507,1266;
+MoveSmooth=1502,1268;
+MoveSmooth=1496,1268;
+MoveSmooth=1491,1266;
+MoveSmooth=1489,1264;
+Command=/select Aquaris;
+Delay=500;
+Command=/attack;
+Delay=500;
+Mouse=105,157;
+Delay=500;
+Mouse=70,264;
+Delay=500;
+Mouse=74,224;
+Delay=500;
+Mouse=183,391;
+
+MemWrite=%AddrFreeMem11,1,BYTE;
+#EndScript
+
+#ELSE
+MoveSmooth=1573,1156;
+MoveSmooth=1577,1158;
+#EXECUTE=Deathcheck;
+MoveSmooth=1582,1160;
+MoveSmooth=1588,1162;
+MoveSmooth=1593,1165;
+MoveSmooth=1598,1167;
+MoveSmooth=1604,1170;
+MoveSmooth=1609,1173;
+MoveSmooth=1614,1175;
+MoveSmooth=1619,1178;
+Command=/select Fragment of Immortal Light;
+Delay=500;
+Command=/attack;
+Delay=2500;
+Mouse=273,264;
+#ENDIF
+_IFQuestInventoryContains=182215957,10;
+MoveSmooth=1620,1178;
+MoveSmooth=1617,1178;
+#EXECUTE=Deathcheck;
+MoveSmooth=1610,1176;
+MoveSmooth=1604,1173;
+MoveSmooth=1597,1171;
+MoveSmooth=1590,1173;
+MoveSmooth=1584,1175;
+MoveSmooth=1577,1178;
+MoveSmooth=1572,1182;
+MoveSmooth=1566,1187;
+MoveSmooth=1562,1192;
+MoveSmooth=1557,1197;
+MoveSmooth=1553,1203;
+MoveSmooth=1549,1209;
+MoveSmooth=1545,1214;
+MoveSmooth=1540,1220;
+MoveSmooth=1536,1226;
+MoveSmooth=1532,1231;
+MoveSmooth=1528,1237;
+MoveSmooth=1524,1243;
+MoveSmooth=1520,1249;
+MoveSmooth=1515,1254;
+MoveSmooth=1511,1260;
+MoveSmooth=1506,1265;
+MoveSmooth=1499,1267;
+MoveSmooth=1492,1266;
+MoveSmooth=1489,1263;
+Command=/select Aquaris;
+Delay=500;
+Command=/attack;
+Delay=500;
+Mouse=105,157;
+Delay=500;
+Mouse=70,264;
+Delay=500;
+Mouse=74,224;
+Delay=500;
+Mouse=183,391;
+
+MemWrite=%AddrFreeMem11,1,BYTE;
+#EndScript
+
+#ELSE
+MoveSmooth=1619,1178;
+MoveSmooth=1618,1177;
+#EXECUTE=Deathcheck;
+MoveSmooth=1616,1172;
+MoveSmooth=1616,1166;
+MoveSmooth=1619,1161;
+MoveSmooth=1621,1155;
+MoveSmooth=1624,1150;
+MoveSmooth=1627,1145;
+MoveSmooth=1629,1140;
+MoveSmooth=1631,1135;
+MoveSmooth=1633,1129;
+MoveSmooth=1636,1124;
+MoveSmooth=1638,1118;
+MoveSmooth=1640,1113;
+MoveSmooth=1641,1107;
+MoveSmooth=1643,1102;
+MoveSmooth=1645,1096;
+MoveSmooth=1649,1092;
+MoveSmooth=1653,1089;
+MoveSmooth=1658,1085;
+MoveSmooth=1663,1082;
+MoveSmooth=1668,1080;
+MoveSmooth=1673,1077;
+MoveSmooth=1678,1074;
+MoveSmooth=1683,1070;
+MoveSmooth=1686,1065;
+MoveSmooth=1688,1060;
+MoveSmooth=1688,1054;
+MoveSmooth=1687,1048;
+MoveSmooth=1686,1043;
+MoveSmooth=1685,1037;
+MoveSmooth=1683,1032;
+MoveSmooth=1681,1026;
+MoveSmooth=1680,1023;
+Command=/select Fragment of Immortal Light;
+Delay=500;
+Command=/attack;
+Delay=2500;
+Mouse=273,264;
+#ENDIF
+_IFQuestInventoryContains=182215957,10;
+MoveSmooth=1680,1023;
+MoveSmooth=1680,1024;
+#EXECUTE=Deathcheck;
+MoveSmooth=1682,1030;
+MoveSmooth=1683,1035;
+MoveSmooth=1685,1041;
+MoveSmooth=1686,1047;
+MoveSmooth=1686,1052;
+MoveSmooth=1686,1058;
+MoveSmooth=1684,1064;
+MoveSmooth=1681,1069;
+MoveSmooth=1677,1072;
+MoveSmooth=1672,1076;
+MoveSmooth=1667,1079;
+MoveSmooth=1662,1082;
+MoveSmooth=1657,1085;
+MoveSmooth=1652,1089;
+MoveSmooth=1649,1093;
+MoveSmooth=1646,1098;
+MoveSmooth=1644,1104;
+MoveSmooth=1641,1109;
+MoveSmooth=1639,1114;
+MoveSmooth=1637,1120;
+MoveSmooth=1635,1125;
+MoveSmooth=1633,1130;
+MoveSmooth=1630,1136;
+MoveSmooth=1628,1141;
+MoveSmooth=1625,1146;
+MoveSmooth=1622,1151;
+MoveSmooth=1618,1155;
+MoveSmooth=1614,1160;
+MoveSmooth=1609,1163;
+MoveSmooth=1604,1166;
+MoveSmooth=1599,1168;
+MoveSmooth=1594,1171;
+MoveSmooth=1588,1173;
+MoveSmooth=1583,1175;
+MoveSmooth=1578,1178;
+MoveSmooth=1572,1180;
+MoveSmooth=1568,1184;
+MoveSmooth=1564,1188;
+MoveSmooth=1560,1193;
+MoveSmooth=1556,1197;
+MoveSmooth=1553,1202;
+MoveSmooth=1550,1207;
+MoveSmooth=1547,1212;
+MoveSmooth=1543,1216;
+MoveSmooth=1540,1221;
+MoveSmooth=1537,1226;
+MoveSmooth=1533,1230;
+MoveSmooth=1530,1235;
+MoveSmooth=1527,1240;
+MoveSmooth=1523,1245;
+MoveSmooth=1520,1250;
+MoveSmooth=1517,1254;
+MoveSmooth=1514,1259;
+MoveSmooth=1510,1263;
+MoveSmooth=1505,1267;
+MoveSmooth=1500,1268;
+MoveSmooth=1494,1268;
+MoveSmooth=1489,1265;
+MoveSmooth=1489,1264;
+Command=/select Aquaris;
+Delay=500;
+Command=/attack;
+Delay=500;
+Mouse=105,157;
+Delay=500;
+Mouse=70,264;
+Delay=500;
+Mouse=74,224;
+Delay=500;
+Mouse=183,391;
+
+MemWrite=%AddrFreeMem11,1,BYTE;
+#EndScript
+
+#ELSE
+MoveSmooth=1677,1024;
+MoveSmooth=1672,1020;
+#EXECUTE=Deathcheck;
+MoveSmooth=1668,1016;
+MoveSmooth=1665,1011;
+MoveSmooth=1661,1006;
+MoveSmooth=1658,1002;
+MoveSmooth=1656,996;
+MoveSmooth=1654,991;
+MoveSmooth=1653,985;
+MoveSmooth=1651,979;
+MoveSmooth=1649,974;
+MoveSmooth=1648,968;
+MoveSmooth=1646,963;
+MoveSmooth=1643,958;
+MoveSmooth=1638,955;
+MoveSmooth=1633,954;
+MoveSmooth=1627,954;
+MoveSmooth=1621,954;
+MoveSmooth=1615,953;
+MoveSmooth=1610,953;
+MoveSmooth=1604,952;
+MoveSmooth=1598,951;
+MoveSmooth=1592,951;
+MoveSmooth=1586,951;
+MoveSmooth=1581,952;
+MoveSmooth=1575,953;
+MoveSmooth=1569,953;
+MoveSmooth=1563,954;
+MoveSmooth=1557,955;
+MoveSmooth=1556,955;
+Command=/select Fragment of Immortal Light;
+Delay=500;
+Command=/attack;
+Delay=2500;
+Mouse=273,264;
+#ENDIF
+_IFQuestInventoryContains=182215957,10;
+MoveSmooth=1557,955;
+MoveSmooth=1558,957;
+#EXECUTE=Deathcheck;
+MoveSmooth=1560,962;
+MoveSmooth=1562,967;
+MoveSmooth=1564,973;
+MoveSmooth=1566,978;
+MoveSmooth=1569,983;
+MoveSmooth=1573,988;
+MoveSmooth=1577,992;
+MoveSmooth=1581,996;
+MoveSmooth=1584,1001;
+MoveSmooth=1586,1006;
+MoveSmooth=1588,1012;
+MoveSmooth=1590,1017;
+MoveSmooth=1592,1023;
+MoveSmooth=1593,1028;
+MoveSmooth=1594,1034;
+MoveSmooth=1595,1040;
+MoveSmooth=1596,1046;
+MoveSmooth=1597,1051;
+MoveSmooth=1599,1057;
+MoveSmooth=1601,1062;
+MoveSmooth=1604,1067;
+MoveSmooth=1608,1071;
+MoveSmooth=1613,1075;
+MoveSmooth=1618,1078;
+MoveSmooth=1623,1081;
+MoveSmooth=1628,1083;
+MoveSmooth=1633,1086;
+MoveSmooth=1638,1090;
+MoveSmooth=1640,1094;
+MoveSmooth=1640,1101;
+MoveSmooth=1640,1107;
+MoveSmooth=1638,1112;
+MoveSmooth=1637,1118;
+MoveSmooth=1635,1123;
+MoveSmooth=1633,1128;
+MoveSmooth=1631,1134;
+MoveSmooth=1629,1139;
+MoveSmooth=1626,1144;
+MoveSmooth=1622,1149;
+MoveSmooth=1618,1153;
+MoveSmooth=1614,1157;
+MoveSmooth=1609,1160;
+MoveSmooth=1604,1163;
+MoveSmooth=1599,1166;
+MoveSmooth=1594,1169;
+MoveSmooth=1589,1172;
+MoveSmooth=1584,1175;
+MoveSmooth=1580,1179;
+MoveSmooth=1575,1182;
+MoveSmooth=1570,1185;
+MoveSmooth=1566,1189;
+MoveSmooth=1561,1193;
+MoveSmooth=1557,1197;
+MoveSmooth=1554,1202;
+MoveSmooth=1550,1206;
+MoveSmooth=1547,1211;
+MoveSmooth=1543,1216;
+MoveSmooth=1540,1220;
+MoveSmooth=1537,1225;
+MoveSmooth=1533,1230;
+MoveSmooth=1530,1234;
+MoveSmooth=1527,1239;
+MoveSmooth=1523,1244;
+MoveSmooth=1520,1248;
+MoveSmooth=1516,1253;
+MoveSmooth=1513,1258;
+MoveSmooth=1509,1262;
+MoveSmooth=1505,1265;
+MoveSmooth=1499,1267;
+MoveSmooth=1493,1266;
+MoveSmooth=1489,1264;
+Command=/select Aquaris;
+Delay=500;
+Command=/attack;
+Delay=500;
+Mouse=105,157;
+Delay=500;
+Mouse=70,264;
+Delay=500;
+Mouse=74,224;
+Delay=500;
+Mouse=183,391;
+
+MemWrite=%AddrFreeMem11,1,BYTE;
+#EndScript
+
+#ELSE
+MoveSmooth=1557,955;
+MoveSmooth=1558,960;
+#EXECUTE=Deathcheck;
+MoveSmooth=1559,966;
+MoveSmooth=1558,971;
+MoveSmooth=1555,977;
+MoveSmooth=1552,982;
+MoveSmooth=1548,986;
+MoveSmooth=1543,987;
+MoveSmooth=1537,984;
+MoveSmooth=1532,981;
+MoveSmooth=1528,977;
+MoveSmooth=1525,973;
+MoveSmooth=1523,969;
+Command=/select Fragment of Immortal Light;
+Delay=500;
+Command=/attack;
+Delay=2500;
+Mouse=273,264;
+#ENDIF
+_IFQuestInventoryContains=182215957,10;
+MoveSmooth=1526,969;
+MoveSmooth=1526,970;
+#EXECUTE=Deathcheck;
+MoveSmooth=1527,976;
+MoveSmooth=1528,981;
+MoveSmooth=1529,987;
+MoveSmooth=1530,993;
+MoveSmooth=1531,999;
+MoveSmooth=1532,1004;
+MoveSmooth=1534,1010;
+MoveSmooth=1535,1016;
+MoveSmooth=1536,1021;
+MoveSmooth=1539,1026;
+MoveSmooth=1543,1031;
+MoveSmooth=1547,1034;
+MoveSmooth=1552,1037;
+MoveSmooth=1557,1040;
+MoveSmooth=1562,1044;
+MoveSmooth=1566,1048;
+MoveSmooth=1569,1052;
+MoveSmooth=1572,1058;
+MoveSmooth=1574,1063;
+MoveSmooth=1576,1068;
+MoveSmooth=1578,1074;
+MoveSmooth=1578,1080;
+MoveSmooth=1575,1085;
+MoveSmooth=1571,1088;
+MoveSmooth=1567,1093;
+MoveSmooth=1566,1098;
+MoveSmooth=1566,1104;
+MoveSmooth=1568,1110;
+MoveSmooth=1569,1115;
+MoveSmooth=1570,1121;
+MoveSmooth=1571,1127;
+MoveSmooth=1572,1132;
+MoveSmooth=1571,1138;
+MoveSmooth=1570,1144;
+MoveSmooth=1569,1149;
+MoveSmooth=1568,1155;
+MoveSmooth=1567,1161;
+MoveSmooth=1566,1167;
+MoveSmooth=1565,1172;
+MoveSmooth=1563,1178;
+MoveSmooth=1562,1183;
+MoveSmooth=1560,1189;
+MoveSmooth=1557,1194;
+MoveSmooth=1555,1199;
+MoveSmooth=1552,1204;
+MoveSmooth=1549,1209;
+MoveSmooth=1545,1213;
+MoveSmooth=1542,1218;
+MoveSmooth=1539,1223;
+MoveSmooth=1535,1228;
+MoveSmooth=1532,1232;
+MoveSmooth=1528,1237;
+MoveSmooth=1525,1242;
+MoveSmooth=1522,1247;
+MoveSmooth=1518,1251;
+MoveSmooth=1515,1256;
+MoveSmooth=1511,1261;
+MoveSmooth=1507,1265;
+MoveSmooth=1502,1268;
+MoveSmooth=1496,1268;
+MoveSmooth=1491,1266;
+MoveSmooth=1489,1264;
+Command=/select Aquaris;
+Delay=500;
+Command=/attack;
+Delay=500;
+Mouse=105,157;
+Delay=500;
+Mouse=70,264;
+Delay=500;
+Mouse=74,224;
+Delay=500;
+Mouse=183,391;
+
+MemWrite=%AddrFreeMem11,1,BYTE;
+#EndScript
+
+#ELSE
+MoveSmooth=1523,969;
+MoveSmooth=1523,972;
+#EXECUTE=Deathcheck;
+MoveSmooth=1525,978;
+MoveSmooth=1526,983;
+MoveSmooth=1527,989;
+MoveSmooth=1528,995;
+MoveSmooth=1528,1001;
+MoveSmooth=1528,1007;
+MoveSmooth=1528,1012;
+MoveSmooth=1528,1018;
+MoveSmooth=1528,1024;
+MoveSmooth=1529,1030;
+Command=/select Fragment of Immortal Light;
+Delay=500;
+Command=/attack;
+Delay=2500;
+Mouse=273,264;
+#ENDIF
+_IFQuestInventoryContains=182215957,10;
+MoveSmooth=1530,1031;
+MoveSmooth=1532,1037;
+#EXECUTE=Deathcheck;
+MoveSmooth=1534,1042;
+MoveSmooth=1537,1048;
+MoveSmooth=1539,1053;
+MoveSmooth=1541,1058;
+MoveSmooth=1544,1064;
+MoveSmooth=1546,1069;
+MoveSmooth=1548,1074;
+MoveSmooth=1550,1080;
+MoveSmooth=1553,1085;
+MoveSmooth=1555,1090;
+MoveSmooth=1557,1096;
+MoveSmooth=1560,1101;
+MoveSmooth=1563,1106;
+MoveSmooth=1566,1111;
+MoveSmooth=1569,1116;
+MoveSmooth=1571,1121;
+MoveSmooth=1572,1127;
+MoveSmooth=1572,1133;
+MoveSmooth=1572,1139;
+MoveSmooth=1571,1144;
+MoveSmooth=1570,1150;
+MoveSmooth=1569,1156;
+MoveSmooth=1568,1162;
+MoveSmooth=1567,1167;
+MoveSmooth=1566,1173;
+MoveSmooth=1564,1178;
+MoveSmooth=1562,1184;
+MoveSmooth=1560,1189;
+MoveSmooth=1558,1195;
+MoveSmooth=1555,1200;
+MoveSmooth=1552,1205;
+MoveSmooth=1548,1209;
+MoveSmooth=1545,1214;
+MoveSmooth=1541,1219;
+MoveSmooth=1538,1224;
+MoveSmooth=1535,1228;
+MoveSmooth=1531,1233;
+MoveSmooth=1528,1238;
+MoveSmooth=1524,1242;
+MoveSmooth=1521,1247;
+MoveSmooth=1518,1252;
+MoveSmooth=1514,1257;
+MoveSmooth=1511,1261;
+MoveSmooth=1507,1266;
+MoveSmooth=1501,1268;
+MoveSmooth=1495,1267;
+MoveSmooth=1490,1264;
+MoveSmooth=1489,1263;
+Command=/select Aquaris;
+Delay=500;
+Command=/attack;
+Delay=500;
+Mouse=105,157;
+Delay=500;
+Mouse=70,264;
+Delay=500;
+Mouse=74,224;
+Delay=500;
+Mouse=183,391;
+
+MemWrite=%AddrFreeMem11,1,BYTE;
+#EndScript
+
+#ELSE
+MoveSmooth=1529,1030;
+MoveSmooth=1529,1035;
+#EXECUTE=Deathcheck;
+MoveSmooth=1529,1041;
+MoveSmooth=1529,1047;
+MoveSmooth=1530,1053;
+MoveSmooth=1531,1059;
+MoveSmooth=1533,1064;
+MoveSmooth=1538,1067;
+MoveSmooth=1542,1071;
+MoveSmooth=1547,1074;
+MoveSmooth=1552,1077;
+MoveSmooth=1555,1079;
+Command=/select Fragment of Immortal Light;
+Delay=500;
+Command=/attack;
+Delay=2500;
+Mouse=273,264;
+_IFQuestInventoryContains=182215957,10;
+MoveSmooth=1553,1078;
+MoveSmooth=1554,1083;
+#EXECUTE=Deathcheck;
+MoveSmooth=1555,1089;
+MoveSmooth=1558,1094;
+MoveSmooth=1560,1100;
+MoveSmooth=1562,1105;
+MoveSmooth=1564,1110;
+MoveSmooth=1567,1116;
+MoveSmooth=1569,1121;
+MoveSmooth=1571,1127;
+MoveSmooth=1571,1132;
+MoveSmooth=1570,1138;
+MoveSmooth=1569,1144;
+MoveSmooth=1569,1150;
+MoveSmooth=1568,1156;
+MoveSmooth=1567,1161;
+MoveSmooth=1567,1167;
+MoveSmooth=1566,1173;
+MoveSmooth=1565,1179;
+MoveSmooth=1564,1184;
+MoveSmooth=1562,1190;
+MoveSmooth=1558,1194;
+MoveSmooth=1555,1199;
+MoveSmooth=1552,1204;
+MoveSmooth=1549,1209;
+MoveSmooth=1545,1214;
+MoveSmooth=1542,1219;
+MoveSmooth=1539,1223;
+MoveSmooth=1535,1228;
+MoveSmooth=1532,1233;
+MoveSmooth=1528,1237;
+MoveSmooth=1525,1242;
+MoveSmooth=1521,1247;
+MoveSmooth=1518,1251;
+MoveSmooth=1514,1256;
+MoveSmooth=1511,1261;
+MoveSmooth=1507,1265;
+MoveSmooth=1501,1267;
+MoveSmooth=1495,1267;
+MoveSmooth=1490,1264;
+MoveSmooth=1489,1264;
+Command=/select Aquaris;
+Delay=500;
+Command=/attack;
+Delay=500;
+Mouse=105,157;
+Delay=500;
+Mouse=70,264;
+Delay=500;
+Mouse=74,224;
+Delay=500;
+Mouse=183,391;
+
+MemWrite=%AddrFreeMem11,1,BYTE;
+#EndScript
+
+#ELSE
+MoveSmooth=1555,1079;
+MoveSmooth=1555,1083;
+#EXECUTE=Deathcheck;
+MoveSmooth=1557,1089;
+MoveSmooth=1560,1094;
+MoveSmooth=1564,1098;
+MoveSmooth=1567,1103;
+MoveSmooth=1570,1108;
+MoveSmooth=1572,1113;
+MoveSmooth=1573,1119;
+MoveSmooth=1574,1125;
+MoveSmooth=1574,1131;
+MoveSmooth=1574,1136;
+MoveSmooth=1574,1142;
+MoveSmooth=1575,1148;
+MoveSmooth=1575,1154;
+MoveSmooth=1575,1155;
+
+end_Route;
+
+start_Deathcheck;
+
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+#EXECUTE=CheckDead;
+#EXECUTE=Return;
+#EXECUTE=Route;
+#Return
+#ENDIF
+
+end_Deathcheck;
+
+start_CheckMob;
+
+#EXECUTE=ReplyWhispers;
+
+_IFSkillActive=50045; <-- auto loot
+_SetVar16=1;
+MemWrite=%AddrFreeMem16,%Var16,BYTE;
+#ELSE
+_SetVar16=0;
+MemWrite=%AddrFreeMem16,%Var16,BYTE;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+_IFMemRead=%AddrLangPack,CHAR[32],=L10N/ENU/;
+#EXECUTE=CheckNA;
+#ELSE
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=CheckEU;
+#ENDIF
+
+end_CheckMob;
+
+
+start_Looting;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+_IFMemRead=%AddrFreeMem16,BYTE,=1;
+#DO=5000;
+_IFMemPtrRead=%TargetBase,%OffsetData/0x15B4,DWORD,>0; <-- is lootable
+MemPtrWrite=%PlayerBase,%OffsetActionID,0x150000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002,BYTE[225];
+#ENDIF
+_UNTILMemPtrRead=%TargetBase,%OffsetData/0x15B4,DWORD,=0; <-- is lootable
+
+end_Looting;
+
+
+start_ScanNearbyTarget;
+
+MemWrite=%AddrFreeMem25,0,BYTE;
+
+#DO=1500; <-- scans 5s for nearby target
+
+MemWrite=%AddrCamY,85,FLOAT;
+SendKey=0x09;
+Delay=100;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%TargetBase,%OffsetType,CHAR[32],=NPC;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#IF=%TargetDistance,<5;
+MemWrite=%AddrFreeMem25,1,BYTE;
+#ENDIF
+
+Delay=150;
+
+_UNTILMemRead=%AddrFreeMem25,BYTE,=1;
+
+end_ScanNearbyTarget;
+
+
+start_CheckNA;
+
+Command=/Automaticselection;
+#DO=100;
+Delay=5;
+_UNTILMemPtrRead=%TargetBase,%OffsetName,BYTE,65-122;
+
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>20;
+_IFMemPtrRead=%TargetBase,%OffsetLevel,BYTE,1-5;
+SendKey=0x1B;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+SendKey=0x1B;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetType,CHAR[32],=User;
+SendKey=0x1B;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetType,CHAR[32],=Player;
+SendKey=0x1B;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+SendKey=0x1B;
+#ENDIF
+
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%TargetBase,%OffsetType,CHAR[32],=NPC;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=CombatSort;
+#EXECUTE=Looting;
+#EXECUTE=ScanNearbyTarget;
+_IFMemRead=%AddrFreeMem25,BYTE,=1;
+#EXECUTE=CombatSort;
+#EXECUTE=Looting;
+#EXECUTE=ScanNearbyTarget;
+_IFMemRead=%AddrFreeMem25,BYTE,=1;
+#EXECUTE=CombatSort;
+#EXECUTE=Looting;
+#EXECUTE=ScanNearbyTarget;
+_IFMemRead=%AddrFreeMem25,BYTE,=1;
+#EXECUTE=CombatSort;
+#EXECUTE=Looting;
+#EXECUTE=ScanNearbyTarget;
+_IFMemRead=%AddrFreeMem25,BYTE,=1;
+#EXECUTE=CombatSort;
+#EXECUTE=Looting;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>20;
+_IFMemPtrRead=%TargetBase,%OffsetLevel,BYTE,1-5;
+SendKey=0x1B;
+#ENDIF
+
+#IF=%TargetName,;
+#ELSE
+SendKey=0x1B;
+Delay=5;
+SendKey=0x1B;
+Delay=5;
+SendKey=0x1B;
+Delay=5;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=RegenerateSort;
+
+end_CheckNA;
+
+
+start_CheckEU;
+
+SendKey=0x09;
+#DO=100;
+Delay=5;
+_UNTILMemPtrRead=%TargetBase,%OffsetName,BYTE,65-122;
+
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>20;
+_IFMemPtrRead=%TargetBase,%OffsetLevel,BYTE,1-5;
+SendKey=0x1B;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+SendKey=0x1B;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetType,CHAR[32],=User;
+SendKey=0x1B;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetType,CHAR[32],=Player;
+SendKey=0x1B;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+SendKey=0x1B;
+#ENDIF
+
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%TargetBase,%OffsetType,CHAR[32],=NPC;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=CombatSort;
+#EXECUTE=Looting;
+#EXECUTE=ScanNearbyTarget;
+_IFMemRead=%AddrFreeMem25,BYTE,=1;
+#EXECUTE=CombatSort;
+#EXECUTE=Looting;
+#EXECUTE=ScanNearbyTarget;
+_IFMemRead=%AddrFreeMem25,BYTE,=1;
+#EXECUTE=CombatSort;
+#EXECUTE=Looting;
+#EXECUTE=ScanNearbyTarget;
+_IFMemRead=%AddrFreeMem25,BYTE,=1;
+#EXECUTE=CombatSort;
+#EXECUTE=Looting;
+#EXECUTE=ScanNearbyTarget;
+_IFMemRead=%AddrFreeMem25,BYTE,=1;
+#EXECUTE=CombatSort;
+#EXECUTE=Looting;
+#ENDIF
+
+#IF=%TargetName,;
+#ELSE
+SendKey=0x1B;
+Delay=5;
+SendKey=0x1B;
+Delay=5;
+SendKey=0x1B;
+Delay=5;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=RegenerateSort;
+
+end_CheckEU;
+
+
+start_CheckDead;
+
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+#LogAddDeath
+#DO=15000;
+MemWrite=%AddrResurrect,0,BYTE; <- Resurrect
+_UNTILMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+Delay=2500;
+#EXECUTE=RegenerateSort;
+MemPtrWrite=%PlayerBase,%OffsetActionID,15,BYTE;
+MemPtrWrite=%PlayerBase,%OffsetActionID,3,BYTE;
+Delay=2500;
+#UseMiol
+#EXECUTE=Return;
+#EXECUTE=Route;
+#Return
+#ENDIF
+
+_IFMemRead=%AddrPet,BYTE,65-122; <-- If pet outside
+_SetVar16=1;
+MemWrite=%AddrFreeMem16,%Var16,BYTE;
+#ELSE
+_SetVar16=0;
+MemWrite=%AddrFreeMem16,%Var16,BYTE;
+#ENDIF
+
+end_CheckDead;
+
+
+start_InventoryCheck;
+
+#SELLMARK
+
+end_InventoryCheck;
+
+
+start_Return;
+
+MoveSmooth=1489,1264;
+MoveSmooth=1491,1266;
+MoveSmooth=1495,1270;
+MoveSmooth=1500,1271;
+MoveSmooth=1505,1268;
+MoveSmooth=1509,1264;
+MoveSmooth=1513,1260;
+MoveSmooth=1516,1255;
+MoveSmooth=1519,1250;
+MoveSmooth=1523,1246;
+MoveSmooth=1526,1241;
+MoveSmooth=1529,1236;
+MoveSmooth=1533,1232;
+MoveSmooth=1536,1227;
+MoveSmooth=1539,1222;
+MoveSmooth=1543,1218;
+MoveSmooth=1546,1213;
+MoveSmooth=1549,1208;
+MoveSmooth=1552,1203;
+MoveSmooth=1555,1199;
+MoveSmooth=1558,1194;
+MoveSmooth=1561,1189;
+MoveSmooth=1564,1184;
+MoveSmooth=1566,1179;
+MoveSmooth=1568,1173;
+MoveSmooth=1569,1168;
+MoveSmooth=1571,1162;
+MoveSmooth=1572,1157;
+
+end_Return;
+
+
+
+start_RegenerateSort;
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=0;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=1;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=2;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=3;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=4;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=5;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=6;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=7;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=8;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=9;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=RegeneratePriest;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=10;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=RegenerateCleric;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=11;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=RegenerateChanter;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=12;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=13;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=14;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=15;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=RegenerateMuse;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=16;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=RegenerateSongweaver;
+#ENDIF
+
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=0;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=1;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=2;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=3;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=4;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=5;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=6;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=7;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=8;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=9;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=10;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=11;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=12;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=13;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=14;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=15;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=Regenerate;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=16;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+#EXECUTE=RegenerateSongweaver;
+#ENDIF
+
+end_RegenerateSort;
+
+
+start_RegeneratePriest;
+
+#DO=10000;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<100;
+SmartSkill=1839,50,2250,False,False; <-- Healing Light
+#ENDIF
+
+_UNTILMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,>90;
+
+end_RegeneratePriest;
+
+
+start_RegenerateCleric;
+
+#DO=10000;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<100;
+SmartSkill=4212,6000,3250,False,False; <- Healing Grace
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<100;
+SmartSkill=1850,50,2250,False,False; <- Healing Light
+#ENDIF
+
+_UNTILMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,>90;
+
+end_RegenerateCleric;
+
+
+start_RegenerateChanter;
+
+#DO=10000;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<100;
+SmartSkill=1860,10000,1100,False,False;               <-- Recovery Spell
+#ENDIF
+
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<100;
+SmartSkill=1850,2000,0,False,False;                   <-- Healing Light
+#ENDIF
+
+_UNTILMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,>90;
+
+end_RegenerateChanter;
+
+
+start_RegenerateMuse;
+
+#DO=10000;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<100;
+SmartSkill=4339,6000,1250,False,False; <-- Soothing Melody
+#ENDIF
+
+_UNTILMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,>90;
+
+end_RegenerateMuse;
+
+
+start_RegenerateSongweaver;
+
+#DO=10000;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<100;
+SmartSkill=4351,6000,1250,3000,False; <- Soothing Melody
+#ENDIF
+
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+SmartSkill=4383,30000,500,False,False; <- Resonating Melody
+#ENDIF
+
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+SmartSkill=4571,6000,500,False,False; <- Resonating Counterpoint
+#ENDIF
+
+_UNTILMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,>90;
+
+end_RegenerateSongweaver;
+
+
+
+start_Regenerate;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<55;<-- Wait caused by Health
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+MemWrite=%AddrFreeMem18,1,BYTE;
+MemPtrWrite=%PlayerBase,%OffsetActionID,3,BYTE;
+Delay=50;
+MemPtrWrite=%PlayerBase,%OffsetActionID,14,BYTE;
+Delay=1500;
+MemPtrWrite=%PlayerBase,%OffsetActionID,14,BYTE;
+#DO=100000;
+Delay=5;
+#EXECUTE=AttackedWhileRest;
+_UNTILMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,=100;
+MemPtrWrite=%PlayerBase,%OffsetActionID,21,BYTE;
+#ENDIF
+
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;<-- Wait caused by Mana
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+MemWrite=%AddrFreeMem18,1,BYTE;
+MemPtrWrite=%PlayerBase,%OffsetActionID,3,BYTE;
+Delay=50;
+MemPtrWrite=%PlayerBase,%OffsetActionID,14,BYTE;
+Delay=1500;
+MemPtrWrite=%PlayerBase,%OffsetActionID,14,BYTE;
+#DO=75000;
+Delay=5;
+#EXECUTE=AttackedWhileRest;
+
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+
+_UNTILMemRead=%AddrFreeMem12,FLOAT,>80;
+MemPtrWrite=%PlayerBase,%OffsetActionID,21,BYTE;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetMovement,FLOAT,<6.0;<-- Wait caused by soulsickness
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,>0;
+MemWrite=%AddrFreeMem18,1,BYTE;
+MemPtrWrite=%PlayerBase,%OffsetActionID,3,BYTE;
+Delay=50;
+MemPtrWrite=%PlayerBase,%OffsetActionID,14,BYTE;
+Delay=1500;
+MemPtrWrite=%PlayerBase,%OffsetActionID,14,BYTE;
+#DO=300000;
+Delay=5;
+#EXECUTE=AttackedWhileRest;
+_UNTILMemPtrRead=%PlayerBase,%OffsetMovement,FLOAT,>6.0;
+MemPtrWrite=%PlayerBase,%OffsetActionID,21,BYTE;
+#ENDIF
+
+
+_IFMemRead=%AddrFreeMem18,BYTE,=1;
+MemPtrWrite=%PlayerBase,%OffsetActionID,3,BYTE;
+Delay=50;
+MemPtrWrite=%PlayerBase,%OffsetActionID,21,BYTE;
+
+Delay=1000;
+#ENDIF
+
+end_Regenerate;
+
+
+start_AttackedWhileRest;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%TargetBase,%OffsetType,CHAR[32],=NPC;
+#EXECUTE=CheckSit;
+#EXECUTE=CombatSort;
+MemWrite=%AddrFreeMem16,%Var16,BYTE;
+_IFMemRead=%AddrFreeMem16,BYTE,=0;
+#DO=2000;
+UseID=50002;
+#UNTIL=%TargetName,;
+#ENDIF
+
+end_AttackedWhileRest;
+
+
+start_CheckSit;
+
+MemPtrWrite=%PlayerBase,%OffsetActionID,21,BYTE;
+Delay=500;
+
+end_CheckSit;
+
+
+start_CombatScroll;
+
+MemWrite=%AddrFreeMem0,%Var2,BYTE;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=2;
+Command=/Use Greater Courage Scroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=3;
+Command=/Use Greater Awakening Scroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=4;
+Command=/Use Greater Courage Scroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=5;
+Command=/Use Greater Awakening Scroll;
+#ENDIF
+
+end_CombatScroll;
+
+
+start_RunningScroll;
+
+MemWrite=%AddrFreeMem0,%Var2,BYTE;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=1;
+Command=/Use Greater Running Scroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=4;
+Command=/Use Greater Running Scroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=5;
+Command=/Use Greater Running Scroll;
+#ENDIF
+
+end_RunningScroll;
+
+
+start_CombatSort;
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x38,BYTE,=1;
+#DO=3000;
+UseID=50000;
+Command=/skill Toggle Combat;
+Delay=1500;
+_UNTILMemPtrRead=%PlayerBase,%OffsetData/0x38,BYTE,=33;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem4,BYTE,=1;
+MemPtrWrite=%PlayerBase,%OffsetAnim,300,WORD; <-- Activate NoAnim
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=0;
+#EXECUTE=CombatWarrior;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=1;
+#EXECUTE=CombatGladiator;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=2;
+#EXECUTE=CombatTemplar;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=3;
+#EXECUTE=CombatScout;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=4;
+#EXECUTE=CombatAssassin;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=5;
+#EXECUTE=CombatRanger;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=6;
+#EXECUTE=CombatMage;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=7;
+#EXECUTE=CombatSorcerer;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=8;
+#EXECUTE=CombatSpiritmaster;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=9;
+#EXECUTE=CombatPriest;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=10;
+#EXECUTE=CombatCleric;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=11;
+#EXECUTE=CombatChanter;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=12;
+#EXECUTE=CombatTechnist;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=13;
+#EXECUTE=CombatAethertech;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=14;
+#EXECUTE=CombatGunslinger;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=15;
+#EXECUTE=CombatMuse;
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetClassID,BYTE,=16;
+#EXECUTE=CombatSongweaver;
+#ENDIF
+
+#LogAddKill
+
+end_CombatSort;
+
+
+
+
+start_CombatGladiator;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<5,5000;
+
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=598,180000,300,False,False; <-- Berserking
+
+SmartSkill=706,300000,750,False,False; <-- Wall of Steel
+
+SmartSkill=620,180000,750,False,False; <-- Armor of Attrition
+
+SmartSkill=2932,180000,750,False,False; <-- Unwavering Devotion
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=779,10000,750,2500,False; <-- Fury Absorption
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2901,12000,750,2500,False; <-- Body Smash
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2876,10000,750,3000,False; <-- Ferocious Strike
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=718,18000,750,2500,False; <-- Cleave
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=668,30000,750,2000,False; <-- Weakening Blow
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=553,180000,750,1000,False; <-- Aerial Lockdown
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=537,180000,750,2000,False; <-- Crushing Blow
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=646,60000,750,False,False; <-- Piercing Rupture
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#EXECUTE=StigmaGladiator;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatGladiator;
+
+
+start_MidCombatGladiator;
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>75;
+SmartSkill=598,180000,750,False,False; <-- Berserking
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>75;
+SmartSkill=706,300000,750,False,False; <-- Wall of Steel
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>75;
+SmartSkill=620,180000,750,False,False; <-- Armor of Attrition
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>75;
+SmartSkill=2932,180000,750,False,False; <-- Unwavering Devotion
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<65;
+SmartSkill=648,180000,750,False,False; <-- Second Wind
+#ENDIF
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatGladiator;
+
+
+
+
+start_CombatTemplar;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<5,5000;
+
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=2932,180000,750,False,False; <-- Unwavering Devotion
+
+SmartSkill=3127,180000,750,False,False; <-- Iron Skin
+
+SmartSkill=2933,90000,750,False,False; <-- Empyrean Fury
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3125,60000,1250,1000,False; <-- Sword Storm
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3123,30000,750,False,False; <-- Aether Leash
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2876,10000,750,2500,False; <-- Ferocious Strike
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2901,12000,750,2500,False; <-- Body Smash
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4605,12000,750,2500,False; <-- Dazing Severe Blow
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3033,90000,750,False,False; <-- Holy Punishment
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2967,90000,750,False,False; <-- Illusion Chains
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#EXECUTE=StigmaTemplar;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatTemplar;
+
+
+start_MidCombatTemplar;
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>75;
+SmartSkill=2932,180000,750,False,False; <-- Unwavering Devotion
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>75;
+SmartSkill=3127,180000,750,False,False; <-- Iron Skin
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>75;
+SmartSkill=2933,90000,750,False,False; <-- Empyrean Fury
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<65;
+SmartSkill=3129,300000,750,False,False; <-- Empyrean Armor
+#ENDIF
+
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatTemplar;
+
+
+
+
+
+
+
+start_CombatRanger;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<20,5000;
+
+MemWrite=%AddrFreeMem0,%Var2,BYTE;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=2;
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=4;
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=889,60000,400,False,False; <- Bestial Fury
+
+SmartSkill=796,60000,400,False,False; <- Strong Shots
+
+SmartSkill=3235,30000,400,False,False; <- Devotion
+
+SmartSkill=3195,30000,400,False,False; <- Focused Evasion
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=795,12000,750,1500,False; <- Stunning Shot
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1005,8000,500,2500,False; <- Swift Shot
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=961,16000,750,False,False; <- Entangling shot
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=848,60000,750,False,False; <- Dizzying Arrow
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=829,60000,750,False,False; <- Holy Arrow
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1074,18000,750,False,False; <- Silence Arrow
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1140,30000,750,False,False; <- Arrow Storm
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=839,60000,750,2000,False; <- Spread Shot
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1026,30000,750,False,False; <- Shackle Arrow
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1119,180000,750,False,False; <- Unerring Shot
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1021,2000,750,False,False; <- Deadshot
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#EXECUTE=StigmaRanger;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatRanger;
+
+
+start_MidCombatRanger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=889,60000,400,False,False; <- Bestial Fury
+
+SmartSkill=796,60000,400,False,False; <- Strong Shots
+
+SmartSkill=3235,30000,400,False,False; <- Devotion
+
+SmartSkill=3195,30000,400,False,False; <- Focused Evasion
+#ENDIF
+
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatRanger;
+
+
+
+
+
+
+
+start_CombatAssassin;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<3,5000;
+
+MemWrite=%AddrFreeMem0,%Var2,BYTE;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=2;
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=4;
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=3370,180000,500,False,False; <- Slayer Form I
+
+SmartSkill=3481,300000,500,False,False; <- Apply Deadly Poison
+
+SmartSkill=3355,120000,500,False,False; <- Flurry
+
+SmartSkill=3468,30000,500,False,False; <- Killer's Eye
+
+SmartSkill=3235,30000,500,False,False; <- Devotion
+
+SmartSkill=3469,300000,500,False,False; <- Deadly Focus
+
+SmartSkill=3195,30000,500,False,False; <- Focused Evasion
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3415,90000,1000,False,False; <- Massacre
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3363,40000,750,False,False; <- Ambush
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3517,60000,750,False,False; <- Weakening Blow
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3207,16000,750,2500,False; <- Surprise Attack
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3194,7000,750,2500,False; <- Swift Edge
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3426,6000,750,2500,False; <- Fang Strike
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3394,7000,750,750,False; <- Rune Carve
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3383,18000,750,750,False; <- Pain Rune
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3476,30000,750,2500,False; <- Assassination
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3368,60000,750,False,False; <- Ripclaw Strike
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<65;
+SmartSkill=3353,60000,750,False,False; <- Blood Rune
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#EXECUTE=StigmaAssassin;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatAssassin;
+
+
+start_MidCombatAssassin;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3370,180000,500,False,False; <- Slayer Form I
+
+SmartSkill=3481,300000,500,False,False; <- Apply Deadly Poison
+
+SmartSkill=3355,120000,500,False,False; <- Flurry
+
+SmartSkill=3468,30000,500,False,False; <- Killer's Eye
+
+SmartSkill=3235,30000,500,False,False; <- Devotion
+
+SmartSkill=3469,300000,500,False,False; <- Deadly Focus
+
+SmartSkill=3195,30000,500,False,False; <- Focused Evasion
+
+SmartSkill=3328,60000,500,False,False; <- Aethertwisting
+#ENDIF
+
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatAssassin;
+
+
+
+
+
+start_CombatCleric;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<25,5000;
+
+MemWrite=%AddrFreeMem0,%Var2,BYTE;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=3;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=5;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=3895,180000,500,False,False; <- Amplification
+
+SmartSkill=3894,60000,500,False,False; <- Prayer of Focus
+
+SmartSkill=3888,180000,500,False,False; <- Sage's Wisdom
+
+SmartSkill=3921,180000,2750,False,False; <- Immortal Shroud
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4053,16000,2750,2500,False; <- Punishing Earth
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4126,30000,550,False,False; <- Summon Holy Servant
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4094,12000,1750,1500,False; <- Earth's Wrath
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4133,16000,550,False,False; <- Chastise
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4072,16000,550,2000,False; <- Slashing Wind
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1626,8000,550,1500,False; <- Hallowed Strike
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1825,24000,550,False,False; <- Infernal Blaze
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4024,2000,1250,2500,False; <- Smite
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4151,60000,550,False,False; <- Land's Bargain
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#EXECUTE=StigmaCleric;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatCleric;
+
+
+start_MidCombatCleric;
+
+
+SmartSkill=1684,3600000,500,False,False; <- Blessing of Guardianship
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>50;
+SmartSkill=3895,180000,500,False,False; <- Amplification
+
+SmartSkill=3894,60000,500,False,False; <- Prayer of Focus
+
+SmartSkill=3888,180000,500,False,False; <- Sage's Wisdom
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<95;
+SmartSkill=3950,30000,550,False,False; <- Light of Rejuvenation
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<80;
+SmartSkill=3959,30000,550,False,False; <- Flash of Recovery
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<60;
+SmartSkill=4194,120000,550,False,False; <- Life Curtain
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<80;
+SmartSkill=4212,6000,3250,False,False; <- Healing Grace
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<80;
+SmartSkill=1850,50,2250,False,False; <- Healing Light
+#ENDIF
+
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+SmartSkill=3877,180000,500,False,False; <- Penance
+#ENDIF
+
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+SmartSkill=4194,120000,550,False,False; <- Life Curtain
+#ENDIF
+
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatCleric;
+
+
+
+start_CombatChanter; <-- Created by FallenEdge
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<5,5000;
+
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFSkillActive=4645;
+#ELSE
+UseID=4645; Hit Mantra
+Delay=350;
+#ENDIF
+_IFSkillActive=4645;
+#ELSE
+UseID=4645; Hit Mantra
+Delay=350;
+#ENDIF
+
+_IFSkillActive=1753;
+#ELSE
+UseID=1753; Revival Mantra
+Delay=350;
+#ENDIF
+_IFSkillActive=1753;
+#ELSE
+UseID=1753; Revival Mantra
+Delay=350;
+#ENDIF
+
+_IFSkillActive=4642;
+#ELSE
+UseID=4642; Invincibility Mantra
+Delay=350;
+#ENDIF
+_IFSkillActive=4642;
+#ELSE
+UseID=4642; Invincibility Mantra
+Delay=350;
+#ENDIF
+
+_IFBuffAlive=1556;
+#ELSE
+SmartSkill=1556,1000,50,False,False;   <-- Ascension Spell
+#ENDIF
+
+_IFBuffAlive=1689;
+#ELSE
+SmartSkill=1689,1000,50,False,False;   <-- Protectorates Prayer
+#ENDIF
+
+
+
+CreateTimer=999999;
+
+#DO=180000;
+
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<25;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,<26;
+SmartSkill=4013,2000,1500,False,False;                  <-- Smite
+#ENDIF
+
+
+#EXECUTE=MidCombatChanter;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1600,12000,50,False,False;       <-- Inescapable Judgment
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1626,8000,50,1500,False;        <-- Hallowed Strike
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1825,2000,1500,1200,False;       <-- Infernal Blaze
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1789,8000,50,1200,False;         <-- Meteor Strike
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#EXECUTE=StigmaChanter;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatChanter;
+
+
+start_MidCombatChanter;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<25;
+SmartSkill=1813,300000,50,False,False;                  <-- Block Curtain
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<25;
+SmartSkill=1698,120000,50,False,False;                  <-- Protective Ward
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<60;
+SmartSkill=1745,5000,50,False,False;                    <-- Word Revival
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<30;
+SmartSkill=1606,60000,100,False,False;                  <-- Stamina Restoration
+#ENDIF
+
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+SmartSkill=1606,60000,100,False,False;                  <-- Stamina Restoration
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<60;
+SmartSkill=1860,10000,1100,False,False;                  <-- Recovery Spell
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<50;
+SmartSkill=1850,2000,0,False,False;                      <-- Healing Light
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<30;
+SmartSkill=1637,180000,50,False,False;                   <-- Unstoppable
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<80;
+SmartSkill=1759,30000,100,False,False;                   <-- Perfect Parry
+#ENDIF
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatChanter;
+
+
+
+start_CombatSpiritmaster;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<25,5000;
+
+MemWrite=%AddrFreeMem0,%Var2,BYTE;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=3;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=5;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_MemPtrReadVar=%TargetBase,%OffsetName,WCHAR[32],9;
+
+_IFFrameVisible=209; spirit window
+#ELSE
+SmartSkill=3779,60000,1150,False,False; <- Summoning Alacrity
+SmartSkill=3704,5000,4750,False,False; <- Wind Spirit
+#ENDIF
+
+Command=/select %Var9;
+Delay=100;
+
+SmartSkill=1166,120000,500,False,False; <- Stone Skin
+
+SmartSkill=3573,120000,500,False,False; <- Sympathetic Mind
+
+SmartSkill=3602,180000,500,False,False; <- Elemental Spirit Armor
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3852,120000,1050,False,False; <- Command: Wind Wrath
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3588,12000,2250,1500,False; <- Weaken Spirit
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3613,15000,500,1500,False; <- Chain of Earth
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1459,3000,500,False,False; <- Erosion
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3837,14000,500,1500,False; <- Command: Wind Disturbance
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1363,10000,2250,1500,False; <- Ice Chain
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3831,10000,1750,False,False; <- Summon Wind Servant
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3601,1000,2000,False,False; <- Vacuum Choke
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3776,60000,750,3500,False; <- Soul Torrent
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3853,30000,750,False,False; <- Command: Wind Pique
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,DWORD,<40;
+SmartSkill=3643,120000,2000,False,False; <- Wind Erosion
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#EXECUTE=StigmaSpiritmaster;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatSpiritmaster;
+
+
+start_MidCombatSpiritmaster;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<40;
+SmartSkill=3833,180000,750,False,False; <- Command: Bodyguard
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<80;
+SmartSkill=3839,180000,750,False,False; <- Spirit Preserve
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<65;
+SmartSkill=4665,24000,2250,False,False; <- Backdraft
+#ENDIF
+
+SmartSkill=1166,120000,500,False,False; <- Stone Skin
+
+SmartSkill=3573,120000,500,False,False; <- Sympathetic Mind
+
+SmartSkill=3602,180000,500,False,False; <- Elemental Spirit Armor
+
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+SmartSkill=3738,120000,2250,False,False; <- Spirit Absorption
+#ENDIF
+
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatSpiritmaster;
+
+
+
+
+start_CombatGunslinger;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<20,5000;
+
+MemWrite=%AddrFreeMem0,%Var2,BYTE;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=2;
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=4;
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=2045,300000,500,False,False; <- Aion's Favor
+
+SmartSkill=2124,180000,500,False,False; <- Anticipation
+
+SmartSkill=2046,60000,500,False,False; <- Stopping Power
+
+SmartSkill=2273,60000,500,False,False; <- Sighting
+
+SmartSkill=2052,30000,500,False,False; <- Pressurized Chamber
+
+SmartSkill=1923,30000,500,False,False; <- Bulletproof
+
+CreateTimer=999999;
+
+#DO=180000;
+
+#IF=%Timer=1953,24000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1953,24000,750,False,False; <- Hot Shot
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+#IF=%Timer=2179,24000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+SmartSkill=2179,24000,500,3000,False; <- Crosstrigger
+CreateTimer=1969;
+CreateTimer=1968;
+CreateTimer=1967;
+CreateTimer=1966;
+CreateTimer=1965;
+CreateTimer=1964;
+CreateTimer=1963;
+CreateTimer=1962;
+CreateTimer=1961;
+CreateTimer=1960;
+CreateTimer=1959;
+CreateTimer=1958;
+CreateTimer=1957;
+CreateTimer=2179;
+CreateTimer=2178;
+CreateTimer=2177;
+CreateTimer=2176;
+CreateTimer=2175;
+CreateTimer=2174;
+CreateTimer=2173;
+CreateTimer=2172;
+CreateTimer=2171;
+CreateTimer=2065;
+CreateTimer=2064;
+CreateTimer=2063;
+CreateTimer=2062;
+CreateTimer=2061;
+CreateTimer=2060;
+CreateTimer=2059;
+CreateTimer=2058;
+CreateTimer=2057;
+CreateTimer=2056;
+CreateTimer=2055;
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+#IF=%Timer=2053,30000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+#IF=%Timer=1969,1500;
+#IF=%Timer=2179,1500;
+#IF=%Timer=2065,1500;
+#IF=%Timer=2053,30000;
+#3DO=750;
+UseID=2053; <-- Reload
+_3UNTILMemRead=%AddrLastID,DWORD,=2053;
+_IFMemPtrRead=%PlayerBase,%OffsetCurrentID,DWORD,=2053;
+CreateTimer=2053;
+DeleteTimer=1969;
+DeleteTimer=1968;
+DeleteTimer=1967;
+DeleteTimer=1966;
+DeleteTimer=1965;
+DeleteTimer=1964;
+DeleteTimer=1963;
+DeleteTimer=1962;
+DeleteTimer=1961;
+DeleteTimer=1960;
+DeleteTimer=1959;
+DeleteTimer=1958;
+DeleteTimer=1957;
+DeleteTimer=2179;
+DeleteTimer=2178;
+DeleteTimer=2177;
+DeleteTimer=2176;
+DeleteTimer=2175;
+DeleteTimer=2174;
+DeleteTimer=2173;
+DeleteTimer=2172;
+DeleteTimer=2171;
+DeleteTimer=2065;
+DeleteTimer=2064;
+DeleteTimer=2063;
+DeleteTimer=2062;
+DeleteTimer=2061;
+DeleteTimer=2060;
+DeleteTimer=2059;
+DeleteTimer=2058;
+DeleteTimer=2057;
+DeleteTimer=2056;
+DeleteTimer=2055;
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+#IF=%Timer=2054,60000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+#IF=%Timer=1969,1500;
+#IF=%Timer=2179,1500;
+#IF=%Timer=2065,1500;
+#IF=%Timer=2054,60000;
+#3DO=750;
+UseID=2054; <-- Autoload
+_3UNTILMemRead=%AddrLastID,DWORD,=2054;
+_IFMemPtrRead=%PlayerBase,%OffsetCurrentID,DWORD,=2054;
+CreateTimer=2054;
+DeleteTimer=1969;
+DeleteTimer=1968;
+DeleteTimer=1967;
+DeleteTimer=1966;
+DeleteTimer=1965;
+DeleteTimer=1964;
+DeleteTimer=1963;
+DeleteTimer=1962;
+DeleteTimer=1961;
+DeleteTimer=1960;
+DeleteTimer=1959;
+DeleteTimer=1958;
+DeleteTimer=1957;
+DeleteTimer=2179;
+DeleteTimer=2178;
+DeleteTimer=2177;
+DeleteTimer=2176;
+DeleteTimer=2175;
+DeleteTimer=2174;
+DeleteTimer=2173;
+DeleteTimer=2172;
+DeleteTimer=2171;
+DeleteTimer=2065;
+DeleteTimer=2064;
+DeleteTimer=2063;
+DeleteTimer=2062;
+DeleteTimer=2061;
+DeleteTimer=2060;
+DeleteTimer=2059;
+DeleteTimer=2058;
+DeleteTimer=2057;
+DeleteTimer=2056;
+DeleteTimer=2055;
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+#IF=%Timer=1969,16000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1969,16000,500,3000,False; <- Gunshot
+CreateTimer=1969;
+CreateTimer=1968;
+CreateTimer=1967;
+CreateTimer=1966;
+CreateTimer=1965;
+CreateTimer=1964;
+CreateTimer=1963;
+CreateTimer=1962;
+CreateTimer=1961;
+CreateTimer=1960;
+CreateTimer=1959;
+CreateTimer=1958;
+CreateTimer=1957;
+CreateTimer=2179;
+CreateTimer=2178;
+CreateTimer=2177;
+CreateTimer=2176;
+CreateTimer=2175;
+CreateTimer=2174;
+CreateTimer=2173;
+CreateTimer=2172;
+CreateTimer=2171;
+CreateTimer=2065;
+CreateTimer=2064;
+CreateTimer=2063;
+CreateTimer=2062;
+CreateTimer=2061;
+CreateTimer=2060;
+CreateTimer=2059;
+CreateTimer=2058;
+CreateTimer=2057;
+CreateTimer=2056;
+CreateTimer=2055;
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+#IF=%Timer=2226,2000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2226,2000,1250,False,False; <- Direct Shot
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+#IF=%Timer=2349,90000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<65;
+SmartSkill=2349,90000,550,2500,False; <- Anti-Enemy Fire
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+#IF=%Timer=2263,18000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2263,18000,750,False,False; <- Quieting Gale
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+#IF=%Timer=2003,60000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2003,60000,750,False,False; <- Wing Clip
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+#IF=%Timer=2166,24000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2166,24000,750,False,False; <- Green Grenade
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#EXECUTE=StigmaGunslinger;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatGunslinger;
+
+
+start_MidCombatGunslinger;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2045,300000,500,False,False; <- Aion's Favor
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2124,180000,500,False,False; <- Anticipation
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1923,30000,500,False,False; <- Bulletproof
+#ENDIF
+
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatGunslinger;
+
+
+
+
+
+
+
+start_CombatSongweaver;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<25,5000;
+
+MemWrite=%AddrFreeMem0,%Var2,BYTE;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=2;
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=4;
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=3;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=5;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=4442,120000,500,False,False; <- Protective Ode
+
+SmartSkill=4449,3600000,500,False,False; <- Etude
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SmartSkill=4296,16000,750,1250,False; <- Syncopated Echo
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SmartSkill=4471,120000,500,1500,3000; <- Fiery Requiem
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4233,12000,1250,2500,False; <- Song of Ice
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4272,16000,750,2500,False; <- Bright Strike
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4424,30000,500,False,False; <- Quaver
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4405,30000,500,False,False; <- Adagio
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4523,16000,1250,False,False; <- Sonic Gust
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4420,2000,1250,False,False; <- Pulse
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#EXECUTE=StigmaSongweaver;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatSongweaver;
+
+
+start_MidCombatSongweaver;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<50;
+SmartSkill=4351,6000,1250,3000,False; <- Soothing Melody
+#ENDIF
+
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+SmartSkill=4383,30000,500,False,False; <- Resonating Melody
+#ENDIF
+
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+SmartSkill=4571,6000,500,False,False; <- Resonating Counterpoint
+#ENDIF
+
+SmartSkill=4442,120500,500,False,False; <- Protective Ode
+
+SmartSkill=4449,3600000,500,False,False; <- Etude
+
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatSongweaver;
+
+
+
+start_CombatSorcerer; <-- created by Shimizu20
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<25,5000;
+
+MemWrite=%AddrFreeMem0,%Var2,BYTE;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=3;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=5;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=1166,120000,500,False,False; <- Stone Skin/Steinhaut
+
+SmartSkill=4449,3600000,500,False,False; <- Robe of Flame/Robe der Flamme
+
+SmartSkill=1249,180000,500,False,False; <- Magic Assist/Magieexplosion
+
+SmartSkill=1270,30000,500,False,False; <- Vaizel's Wisdom/Vaizels Weisheit
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SmartSkill=1258,120000,4250,False,False; <- Aetherflame/Feuer der magischen Kraft
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SmartSkill=1509,60000,2250,False,False; <- Magma Burst/Gro?r Vulkanausbruch
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1183,60000,500,False,False; <- Freeze/Frost
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1281,3000,2250,2250,False; <- Flame Harpoon/Flammenharpune
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1375,10000,2250,1250,False; <- Ice Chain/Eiskette
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1269,90000,500,2250,False; <- Wind Spear/Speer des Windes
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1294,500,2250,2250,False; <- Flame Bolt/Flammenpfeil
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1430,30000,2250,False,False; <- Delayed Blast/Verz??te Explosion
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1519,5000,500,False,False; <- Flame Cage/Flammenk?g
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1257,3000,1250,1250,False; <- Refracting Shard/Funkelnde Scherbe
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1401,60000,500,False,False; <- Stamina Absorption/Ausdauerabsorption
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetLevel,BYTE,>64;
+#EXECUTE=StigmaSorcerer;
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatSorcerer;
+
+
+start_MidCombatSorcerer;
+
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+
+_IFMemRead=%AddrFreeMem12,FLOAT,<50;
+SmartSkill=1203,180000,500,False,False; <- Gain Mana/Managewinn
+#ENDIF
+
+SmartSkill=1166,120000,500,False,False; <- Stone Skin/Steinhaut
+
+SmartSkill=4449,3600000,500,False,False; <- Robe of Flame/Robe der Flamme
+
+SmartSkill=1249,180000,500,False,False; <- Magic Assist/Magieexplosion
+
+SmartSkill=1270,30000,500,False,False; <- Vaizel's Wisdom/Vaizels Weisheit
+
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatSorcerer;
+
+
+
+start_CombatWarrior;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<5,5000;
+
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2865,10000,750,1000,False; <-- Ferocious Strike
+#ENDIF
+
+#EXECUTE=MidCombatWarrior;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2890,12000,750,False,False; <-- Body Smash
+#ENDIF
+
+Command=/attack;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatWarrior;
+
+
+start_MidCombatWarrior;
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatWarrior;
+
+
+
+start_CombatScout;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<5,5000;
+
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=3235,30000,500,False,False; <-- Devotion
+
+SmartSkill=3195,30000,500,False,False; <-- Focused Evasion
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3196,16000,750,False,False; <-- Surprise Attack
+#ENDIF
+
+#EXECUTE=MidCombatScout;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3182,7000,750,1000,False; <-- Swift Edge
+#ENDIF
+
+Command=/attack;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatScout;
+
+
+start_MidCombatScout;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3235,30000,500,False,False; <-- Devotion
+SmartSkill=3195,30000,500,False,False; <-- Focused Evasion
+#ENDIF
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatScout;
+
+
+
+start_CombatMage;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<25,5000;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=3;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=5;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=1155,120000,500,False,False; <-- Stone Skin
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1363,10000,2250,1000,False; <-- Ice Chain
+#ENDIF
+
+#EXECUTE=MidCombatMage;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1447,3000,500,False,False; <-- Erosion
+#ENDIF
+
+#EXECUTE=MidCombatMage;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1328,60000,500,False,False; <-- Root
+#ENDIF
+
+#EXECUTE=MidCombatMage;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1282,2000,2250,1000,False; <-- Flame Bolt
+#ENDIF
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatMage;
+
+
+start_MidCombatMage;
+
+SmartSkill=1155,120000,500,False,False; <-- Stone Skin
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatMage;
+
+
+
+
+start_CombatPriest;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<25,5000;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=3;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=5;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4013,2000,1750,False,False; <-- Smite
+#ENDIF
+
+#EXECUTE=MidCombatPriest;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1814,24000,750,False,False; <-- Infernal Blaze
+#ENDIF
+
+#EXECUTE=MidCombatPriest;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+#IF=%TargetDistance,<5;
+SmartSkill=1615,8000,750,False,False; <-- Hallowed Strike
+#ENDIF
+
+#EXECUTE=MidCombatPriest;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatPriest;
+
+
+start_MidCombatPriest;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<50;
+SmartSkill=1839,50,2250,False,False; <-- Healing Light
+#ENDIF
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatPriest;
+
+
+
+start_CombatTechnist;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<20,5000;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=2;
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=4;
+_IFBuffAlive=9959;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+SmartSkill=2168,60000,750,False,False; <-- Bullet Resistance
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1942,24000,750,False,False; <-- Hot Shot
+#ENDIF
+
+#EXECUTE=MidCombatTechnist;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1958,16000,750,1500,False; <-- Gunshot
+#ENDIF
+
+#EXECUTE=MidCombatTechnist;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2220,2000,750,False,False; <-- Direct Shot
+#ENDIF
+
+#EXECUTE=MidCombatTechnist;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatTechnist;
+
+
+start_MidCombatTechnist;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2168,60000,750,False,False; <-- Bullet Resistance
+#ENDIF
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatTechnist;
+
+
+
+start_CombatMuse;
+
+MemWrite=%AddrFreeMem6,0,BYTE;
+
+GoTowardsTarget=<20,5000;
+
+_IFMemRead=%AddrFreeMem0,BYTE,=3;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem0,BYTE,=5;
+_IFBuffAlive=9965;
+#ELSE
+#EXECUTE=CombatScroll;
+#ENDIF
+
+CreateTimer=999999;
+
+#DO=180000;
+
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SmartSkill=4300,60000,500,False,3000; <-- Fiery Descant
+#ENDIF
+
+#EXECUTE=MidCombatMuse;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4409,2000,1250,False,False; <-- Pulse
+#ENDIF
+
+#EXECUTE=MidCombatMuse;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4222,12000,1250,False,False; <-- Song of Ice
+#ENDIF
+
+#EXECUTE=MidCombatMuse;
+
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+_IFMemPtrRead=%PlayerBase,%OffsetHP,DWORD,=0;
+MemWrite=%AddrFreeMem6,1,BYTE;
+#ENDIF
+
+_UNTILMemRead=%AddrFreeMem6,BYTE,=1;
+
+end_CombatMuse;
+
+
+start_MidCombatMuse;
+
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<50;
+SmartSkill=4339,6000,1250,False,False; <-- Soothing Melody
+#ENDIF
+
+#IF=%Timer=999999,7000;<-- If target got no damage after 7000 milliseconds cancel combat
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,=100;
+SendKey=0x1B;
+MemPtrWrite=%AddrESChwnd,%OffsetESChwnd,142,BYTE;
+#ENDIF
+
+#EXECUTE=Potion;
+
+end_MidCombatMuse;
+
+
+
+
+start_StigmaGladiator;
+
+_IFStigmaAvailable=140001103;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=696,30000,750,False,False; <-- Sure Strike // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001104;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=589,16000,750,False,False; <-- Spite Strike // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFStigmaAvailable=140001105;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=681,16000,750,1500,False; <-- Sharp Strike // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001106;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=617,120000,750,False,False; <-- Tendon Slice // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFStigmaAvailable=140001107;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=544,120000,750,2000,False; <-- Exhausting Wave // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001108;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=738,90000,750,False,False; <-- Severe Precision Cut // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFStigmaAvailable=140001109;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=582,18000,750,False,False; <-- Crippling Cut // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001110;
+#EXECUTE=IsStumble;
+_IFMemRead=%AddrFreeMem30,BYTE,=1;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=768,30000,750,False,False; <-- Draining Blow // Melee // DPS-Heal // Both
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFStigmaAvailable=140001111;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=705,120000,750,False,False; <-- Earthquake Wave // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001115;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=507,12000,750,False,False; <-- Lockdown // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFStigmaAvailable=140001116;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<50;
+SmartSkill=570,60000,750,False,False; <-- Dauntless Spirit // - // Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=140001117;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>85;
+SmartSkill=690,300000,550,False,False; <-- Howl // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFStigmaAvailable=140001118;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<66;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=783,60000,750,False,False; <-- Draining Sword // Melee // DPS-Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=140001119;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=757,60000,750,False,False; <-- Whirling Strike // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFStigmaAvailable=641;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=641,90000,750,2500,False; <-- Unraveling Assault // Melee // DPS // Both
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=D;
+_IFStigmaAvailable=657;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=657,180000,750,False,False; <-- Battle Banner // - // - // Asmo
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=L;
+_IFStigmaAvailable=658;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=658,180000,750,False,False; <-- Battle Banner // - // - // Elyos
+#ENDIF
+
+_IFStigmaAvailable=727;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=727,180000,750,False,3250; <-- Wind Lance // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGladiator;
+
+end_StigmaGladiator;
+
+
+
+start_StigmaTemplar;
+
+_IFStigmaAvailable=140001122;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2931,300000,750,False,False; <-- Prayer of Victory // - // Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=140001123;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2944,120000,950,False,False; <-- Divine Justice // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFStigmaAvailable=140001124;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2973,180000,750,False,False; <-- Punishing Wave // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001128;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3035,180000,750,False,False; <-- Divine Fury // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFStigmaAvailable=140001129;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2966,60000,750,False,False; <-- Holy Shield // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001130;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3147,60000,750,False,False; <-- Punishing Thrust // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFStigmaAvailable=140001131;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3181,30000,750,False,False; <-- Punishment // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001132;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2938,180000,750,False,False; <-- Aether Armor // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFStigmaAvailable=140001133;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2960,30000,750,False,False; <-- Inquisitor's Blow // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001134;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<66;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>60;
+SmartSkill=2922,600000,750,False,False; <-- Empyrean Providence // - // Heal // Both
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+_IFStigmaAvailable=2919;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<66;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2919,30000,750,False,False; <-- Invigorating Strike // Melee // DPS-Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=2915;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<66;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=2915,180000,750,False,False; <-- Eternal Denial // - // Heal // Both
+#ENDIF
+
+#EXECUTE=MidCombatTemplar;
+
+end_StigmaTemplar;
+
+
+
+start_StigmaAssassin;
+
+_IFStigmaAvailable=140001136;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=3326,180000,750,False,False; <-- Apply Lethal Venom // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001137;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=3254,12000,750,False,False; <-- Agony Rune // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFStigmaAvailable=140001138;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<66;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=3319,180000,750,False,False; <-- Sensory Boost // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001140;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3337,180000,750,False,False; <-- Dash and Slash // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFStigmaAvailable=140001142;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3320,300000,750,False,False; <-- Deadly Abandon // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001143;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=3480,180000,750,False,False; <-- Oath of Accuracy // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFStigmaAvailable=140001147;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3261,180000,750,False,False; <-- Venomous Strike // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001149;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3269,7000,750,False,False; <-- Rune Knife // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFStigmaAvailable=140001151;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3248,60000,750,False,False; <-- Quickening Doom // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=3239;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3239,120000,750,False,False; <-- Fangdrop Stab // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatAssassin;
+
+_IFStigmaAvailable=3242;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3242,60000,750,False,False; <-- Explosive Rebranding // Melee // DPS // Both
+#ENDIF
+
+end_StigmaAssassin;
+
+
+
+
+start_StigmaRanger;
+
+_IFStigmaAvailable=140001153;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=819,24000,1150,False,False; <-- Lethal Arrow // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001154;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=825,20000,750,False,False; <-- Heart Shot // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFStigmaAvailable=140001156;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1052,7000,750,False,False; <-- Gale Arrow // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001157;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1117,18000,750,False,False; <-- Explosive Arrow // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFBuffAlive=813;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem30,0,BYTE;
+#ENDIF
+_IFMemRead=%AddrFreeMem30,BYTE,=0;
+_IFStigmaAvailable=140001159;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=813,1000,850,False,False; <-- Focused Shots // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001162;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=880,30000,750,False,False; <-- Dilation Arrow // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=L;
+_IFStigmaAvailable=140001163;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=969,120000,2250,False,False; <-- Skybound Trap // - // - // Elyos
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=D;
+_IFStigmaAvailable=140001164;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=977,120000,2250,False,False; <-- Skybound Trap // - // - // Asmo
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=L;
+_IFStigmaAvailable=140001165;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=985,20000,500,False,False; <-- Blazing Trap // - // - // Elyos
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=D;
+_IFStigmaAvailable=140001166;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=993,20000,500,False,False; <-- Blazing Trap // - // - // Asmo
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFStigmaAvailable=140001168;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1057,180000,750,False,False; <-- Bow of Blessing // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001171;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1134,18000,750,False,False; <-- Arrow Deluge // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFStigmaAvailable=140001172;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=812,24000,750,False,False; <-- Agonizing Arrow // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001173;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=871,30000,750,False,False; <-- Lightning Arrow // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFStigmaAvailable=1006;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1006,120000,2250,False,False; <-- Ripthread Shot // Ranged // DPS // Both
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=L;
+_IFStigmaAvailable=1065;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1065,300000,500,False,False; <-- Staggering Trap // - // - // Elyos
+#ENDIF
+
+#EXECUTE=MidCombatRanger;
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=D;
+_IFStigmaAvailable=1064;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1064,300000,500,False,False; <-- Staggering Trap // - // - // Asmo
+#ENDIF
+
+end_StigmaRanger;
+
+
+
+start_StigmaSorcerer;
+
+_IFStigmaAvailable=140001175;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4604,150000,1250,False,False; <-- Arcane Thunderbolt // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001176;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1356,150000,1250,False,False; <-- Summon Rock // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFStigmaAvailable=140001177;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=1525,30000,3750,False,False; <-- Flame Spray // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001178;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1555,180000,750,False,False; <-- Illusion Storm // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFStigmaAvailable=140001180;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=1493,120000,4250,False,False; <-- Storm Strike // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001181;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4602,24000,1250,False,False; <-- Wind Cut Down // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFStigmaAvailable=140001186;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=1350,300000,550,False,False; <-- Boon of Quickness // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001187;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1183,60000,550,False,False; <-- Freeze // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFStigmaAvailable=140001189;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1383,6000,2750,False,False; <-- Ice Harpoon // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001190;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<20;
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11;
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12;
+_Calc11=%Var12/%Var11;
+_Calc11=%Var11*100;
+MemWrite=%AddrFreeMem12,%Var11,FLOAT;
+_IFMemRead=%AddrFreeMem12,FLOAT,>60;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1327,300000,550,False,False; <-- Exchange Vitality // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFStigmaAvailable=140001191;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+#IF=%TargetDistance,<6;
+SmartSkill=1307,180000,550,False,False; <-- Wintry Armor // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001192;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=1326,60000,4250,False,False; <-- Glacial Shard // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+_IFStigmaAvailable=1540;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=1540,180000,550,False,False; <-- Aetherblaze // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=1420;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<33;
+SmartSkill=1420,300000,550,False,False; <-- Repulsion Field // - // Heal // Both
+#ENDIF
+
+#EXECUTE=MidCombatSorcerer;
+
+end_StigmaSorcerer;
+
+
+
+
+start_StigmaSpiritmaster;
+
+_IFStigmaAvailable=140001193;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3574,30000,1250,False,False; <-- Shackle of Vulnerability // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001195;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3561,30000,1750,False,False; <-- Infernal Pain // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFStigmaAvailable=140001196;
+_IFFrameVisible=209; spirit window
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3548,30000,1050,False,False; <-- Spirit Ruinous Offensive // Ranged // DPS // Both
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=L;
+_IFStigmaAvailable=140001197;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3807,30000,1750,False,False; <-- Summon Cyclone Servant // Ranged // DPS // Elyos
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=D;
+_IFStigmaAvailable=140001197;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3808,30000,1750,False,False; <-- Summon Cyclone Servant // Ranged // DPS // Asmo
+#ENDIF
+
+_IFStigmaAvailable=140001199;
+_MemPtrReadVar=%TargetBase,%OffsetName,WCHAR[64],29;
+Command=/select Wind Spirit;
+#DO=125;
+Delay=10;
+#UNTIL=%TargetName,Wind Spirit;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,<25;
+SmartSkill=3590,90000,1750,False,False; <-- Healing Spirit // - // Heal // Both
+Command=/select %Var29;
+#ELSE
+Command=/select %Var29;
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFStigmaAvailable=140001202;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3772,30000,550,False,3550; <-- Stone Scour // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001203;
+_IFFrameVisible=209; spirit window
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3836,180000,2250,False,False; <-- Spirit Burn-to-Ashes // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFStigmaAvailable=140001204;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3847,12000,2250,False,False; <-- Cyclone of Wrath // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001205;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3581,120000,2250,False,False; <-- Withering Gloom // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFStigmaAvailable=140001206;
+_IFFrameVisible=209; spirit window
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3531,120000,1050,False,False; <-- Spirit Wall of Protection // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001208;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_MemPtrReadVar=%PlayerBase,0x30,WORD,29;
+_IFMemPtrRead=%AddrFrameID[2],0x558,WORD,=%Var29; <-- if target has player as target
+SmartSkill=3739,30000,550,False,False; <-- Enmity Swap // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFStigmaAvailable=140001209;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3547,180000,1250,False,False; <-- Infernal Blight // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001210;
+_IFFrameVisible=209; spirit window
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3796,60000,1250,False,False; <-- Armor Spirit // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFFrameVisible=209; spirit window
+MemWrite=%AddrFreeMem30,0,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+_IFMemRead=%AddrFreeMem30,BYTE,=1;
+_IFStigmaAvailable=3541;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3541,180000,550,False,False; <-- Spirit's Empowerment // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=3549;
+_IFFrameVisible=209; spirit window
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<33;
+SmartSkill=3549,300000,550,False,False; <-- Command: Absorb Wounds // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatSpiritmaster;
+
+_IFStigmaAvailable=3849;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3849,180000,1250,False,False; <-- Blood Funnel // Ranged // DPS // Both
+#ENDIF
+
+end_StigmaSpiritmaster;
+
+
+
+start_StigmaCleric;
+
+_IFStigmaAvailable=140001228;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4187,90000,1250,False,False; <-- Enfeebling Burst // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001229;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4149,180000,2250,False,False; <-- Chain of Suffering // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=L;
+_IFStigmaAvailable=140001230;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4162,30000,550,False,False; <-- Summon Noble Energy // Ranged // DPS // Elyos
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=D;
+_IFStigmaAvailable=140001231;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4163,30000,550,False,False; <-- Summon Noble Energy // Ranged // DPS // Asmo
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFStigmaAvailable=140001232;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<66;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4003,60000,550,False,False; <-- Splendor of Rebirth // - // Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=140001233;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3997,120000,1250,False,False; <-- Ripple of Purification // - // Heal // Both
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=L;
+_IFStigmaAvailable=140001234;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<85;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3990,60000,1250,False,False; <-- Summon Healing Servant // - // Heal // Elyos
+#ENDIF
+
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x10C0,CHAR[1],=D;
+_IFStigmaAvailable=140001235;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<85;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3991,60000,1250,False,False; <-- Summon Healing Servant // - // Heal // Asmo
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFStigmaAvailable=140001236;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3931,120000,550,False,False; <-- Saving Grace // - // Heal // Both
+#ENDIF
+
+_IFSkillActive=3902;
+MemWrite=%AddrFreeMem29,1,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem29,0,BYTE;
+#ENDIF
+_IFStigmaAvailable=140001237;
+_IFMemRead=%AddrFreeMem29,BYTE,=0;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3902,10000,550,False,False; <-- Sacrificial Power // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFStigmaAvailable=140001238;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<66;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3960,10000,2250,False,False; <-- Binding Light // - // Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=140001240;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4143,30000,550,False,False; <-- Retribution Lightning // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFStigmaAvailable=140001242;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,>75;
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11;
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12;
+_Calc11=%Var12/%Var11;
+_Calc11=%Var11*100;
+MemWrite=%AddrFreeMem12,%Var11,FLOAT;
+_IFMemRead=%AddrFreeMem12,FLOAT,10-20;
+SmartSkill=3904,600000,550,False,False; <-- Reverse Condition // - // Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=140001243;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4134,60000,550,False,False; <-- Festering Wound // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFStigmaAvailable=140001244;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4192,180000,550,False,False; <-- Noble Grace // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001245;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4166,60000,3250,False,False; <-- Call Lightning // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+_IFSkillActive=3902;
+MemWrite=%AddrFreeMem29,1,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem29,0,BYTE;
+#ENDIF
+_IFSkillActive=3905;
+MemWrite=%AddrFreeMem28,1,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem28,0,BYTE;
+#ENDIF
+_IFStigmaAvailable=140001245;
+_IFMemRead=%AddrFreeMem28,BYTE,=0;
+_IFMemRead=%AddrFreeMem29,BYTE,=0;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3905,1000,550,False,False; <-- Benevolence // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=3932;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=3932,180000,550,False,False; <-- Restoration Relief // - // Heal // Both
+#ENDIF
+
+#EXECUTE=MidCombatCleric;
+
+end_StigmaCleric;
+
+
+
+start_StigmaChanter;
+
+_IFBuffAlive=1756;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem30,0,BYTE;
+#ENDIF
+_IFMemRead=%AddrFreeMem30,BYTE,=0;
+_IFStigmaAvailable=140001211;
+SmartSkill=1756,500,550,False,False; <-- Blessing of Stone // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001212;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<50;
+SmartSkill=1857,10000,2250,False,False; <-- Healing Burst // - // Heal // Both
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFStigmaAvailable=140001213;
+_SetVar30=1907;
+#EXECUTE=IsStigmaAvailable;
+_IFMemRead=%AddrFreeMem30,BYTE,=0;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1755,14500,550,False,False; <-- Word of Protection // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001214;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=1656,180000,550,False,False; <-- Blessing of Wind // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFStigmaAvailable=140001215;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1868,60000,550,False,False; <-- Disorienting Blow // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001216;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1874,30000,750,False,False; <-- Mountain Crash // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFStigmaAvailable=140001213;
+MemWrite=%AddrFreeMem29,1,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem29,0,BYTE;
+#ENDIF
+_IFStigmaAvailable=1907;
+MemWrite=%AddrFreeMem28,1,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem28,0,BYTE;
+#ENDIF
+_IFStigmaAvailable=140001217;
+_IFMemRead=%AddrFreeMem29,BYTE,=0;
+_IFMemRead=%AddrFreeMem28,BYTE,=0;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1579,14500,550,False,False; <-- Word of Inspiration // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001218;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1647,60000,550,1500,False; <-- Annihilation // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFStigmaAvailable=140001219;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1734,60000,550,False,False; <-- Word of Life // - // Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=140001220;
+#EXECUTE=IsCC;
+_IFMemRead=%AddrFreeMem30,BYTE,=1;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1767,30000,550,False,False; <-- Soul Lock // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFStigmaAvailable=140001223;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4629,30000,550,False,3250; <-- Leaping Flash // Melee // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001224;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4638,120000,550,False,False; <-- Healing Conduit // - // Heal // Both
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFStigmaAvailable=140001226;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<40;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1834,180000,550,False,False; <-- Elemental Screen // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001227;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1837,40000,550,False,False; <-- Numbing Blow // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+_IFStigmaAvailable=1907;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=,60000,550,False,False; <-- Word of Instigation // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=1901;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=1901,120000,550,False,False; <-- Resonant Strike // Melee // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatChanter;
+
+end_StigmaChanter;
+
+
+
+
+
+start_StigmaGunslinger;
+
+_IFStigmaAvailable=140001247;
+#IF=%Timer=1981,30000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001247;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+SmartSkill=1981,30000,550,False,False; <-- Hemorrhage Shot // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001248;
+#IF=%Timer=2052,30000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001248;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+SmartSkill=2052,30000,550,False,False; <-- Pressurized Chamber // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+_IFStigmaAvailable=140001250;
+#IF=%Timer=1975,30000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250; <-- base atkspeed equals gun
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001250;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800;
+SmartSkill=1975,30000,550,False,False; <-- Juggernaut Cannon // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001251;
+#IF=%Timer=2114,120000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250; <-- base atkspeed equals gun
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001251;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800;
+SmartSkill=2114,120000,550,False,False; <-- Paralysis Cannon // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+_IFStigmaAvailable=140001252;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2046,60000,550,False,False; <-- Stopping Power // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001253;
+#IF=%Timer=2123,30000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800;
+SendAction=3,4;
+#ENDIF
+_IFStigmaAvailable=140001253;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+SmartSkill=2123,30000,550,3000,False; <-- Steady Fire // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+_IFStigmaAvailable=140001255;
+#IF=%Timer=2105,16000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250; <-- base atkspeed equals gun
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001255;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800;
+SmartSkill=2105,16000,550,False,False; <-- Frozen Blitz // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001256;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2273,60000,550,False,False; <-- Sighting // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+_IFStigmaAvailable=140001257;
+#IF=%Timer=2367,30000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001257;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<75;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+SmartSkill=2367,30000,550,False,False; <-- Power Grab // - // DPS-Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=140001258;
+#IF=%Timer=2090,30000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250; <-- base atkspeed equals gun
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001258;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800;
+SmartSkill=2090,30000,550,False,3550; <-- Fiery Blast // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+_IFStigmaAvailable=140001259;
+#IF=%Timer=2253,40000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250; <-- base atkspeed equals gun
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001259;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800;
+SmartSkill=2253,40000,550,False,3550; <-- Shock and Awe // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001260;
+#IF=%Timer=2295,120000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250; <-- base atkspeed equals gun
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001260;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800;
+SmartSkill=2295,120000,550,False,4250; <-- Missile Guide // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+_IFStigmaAvailable=140001261;
+#IF=%Timer=2319,24000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250; <-- base atkspeed equals gun
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001261;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800;
+SmartSkill=2319,24000,550,False,3550; <-- Blazing Bombardment // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001262;
+#IF=%Timer=2068,40000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001262;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+SmartSkill=2068,40000,550,False,False; <-- Dazzling Fire // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+_IFStigmaAvailable=140001263;
+#IF=%Timer=2201,24000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250; <-- base atkspeed equals gun
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=140001263;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800;
+SmartSkill=2201,24000,550,False,3550; <-- Shellshock // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=2368;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=2368,180000,550,False,False; <-- Pursuit Stance // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+_IFStigmaAvailable=2377;
+#IF=%Timer=2377,120000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250; <-- base atkspeed equals gun
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=2377;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800;
+SmartSkill=2377,120000,550,False,4250; <-- Sequential Fire // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=2380;
+#IF=%Timer=2380,120000;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2800; <-- base atkspeed equals cannon
+SendAction=3,4; <-- switch weapon
+#ENDIF
+_IFStigmaAvailable=2380;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetData/0x534,WORD,=2250;
+SmartSkill=2380,120000,550,1500,False; <-- Pulverizer Cannon // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatGunslinger;
+
+end_StigmaGunslinger;
+
+
+
+
+
+start_StigmaSongweaver;
+
+_IFStigmaAvailable=140001282;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4529,60000,1250,False,False; <-- Paean of Pain // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001284;
+MemWrite=%AddrFreeMem29,1,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem29,0,BYTE;
+#ENDIF
+_IFSkillActive=4589;
+MemWrite=%AddrFreeMem28,1,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem28,0,BYTE;
+#ENDIF
+_IFStigmaAvailable=140001283;
+_IFMemRead=%AddrFreeMem29,BYTE,=0;
+_IFMemRead=%AddrFreeMem28,BYTE,=0;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4589,12000,550,False,False; <-- Exultation // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFSkillActive=4590;
+MemWrite=%AddrFreeMem29,1,BYTE;
+#ELSE
+MemWrite=%AddrFreeMem29,0,BYTE;
+#ENDIF
+_IFStigmaAvailable=140001284;
+_IFMemRead=%AddrFreeMem29,BYTE,=0;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4590,12000,550,False,False; <-- Impassion // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001285;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<45;
+SmartSkill=4518,3000,550,False,3550; <-- Soothing Hymn // - // Heal // Both
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFStigmaAvailable=140001286;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<70;
+SmartSkill=4367,24000,550,False,False; <-- Joyous Carol // - // Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=140001288;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4550,30000,550,False,False; <-- Stinging Note // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFStigmaAvailable=140001289;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<75;
+SmartSkill=4537,60000,550,False,False; <-- Hymn of Rejuvenation // - // Heal // Both
+#ENDIF
+
+_IFStigmaAvailable=140001291;
+_MemPtrReadVar=%TargetBase,%OffsetData/0x30,WORD,29;
+_IFMemPtrRead=%AddrFrameID[20],0x710,WORD,=%Var29;
+_IFMemPtrRead=%AddrFrameID[20],0x758,DWORD,>0; has buffs
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4542,30000,550,False,False; <-- Half-Stop // - // - // Both
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFStigmaAvailable=140001294;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11;
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12;
+_Calc11=%Var12/%Var11;
+_Calc11=%Var11*100;
+MemWrite=%AddrFreeMem12,%Var11,FLOAT;
+_IFMemRead=%AddrFreeMem12,FLOAT,<20;
+SmartSkill=4391,60000,550,False,False; <-- Resonant Hymn // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=140001295;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4579,60000,550,False,False; <-- Combustible Cacophony // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFStigmaAvailable=140001296;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=4489,60000,550,False,False; <-- Treble Cleave // Ranged // DPS // Both
+#ENDIF
+
+_IFStigmaAvailable=140001297;
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<75;
+SmartSkill=4486,60000,550,False,False; <-- Chorus of Blessing // - // Heal // Both
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+_IFStigmaAvailable=4483;
+_IFMemPtrRead=%AddrFrameID[168],0x75C,DWORD,>0; has debuffs
+_IFMemPtrRead=%TargetBase,%OffsetHP,DWORD,>0;
+SmartSkill=4483,30000,550,False,False; <-- Purging Paean // - // - // Both
+#ENDIF
+
+_IFStigmaAvailable=4474;
+_IFMemPtrRead=%TargetBase,%OffsetPercentHP,BYTE,>66;
+SmartSkill=4474,60000,3550,False,False; <-- Blazing Requiem // Ranged // DPS // Both
+#ENDIF
+
+#EXECUTE=MidCombatSongweaver;
+
+end_StigmaSongweaver;
+
+
+
+
+
+
+
+
+
+start_IsCC;
+
+MemWrite=%AddrFreeMem29,0,BYTE;
+
+#EXECUTE=IsStun;
+_IFMemRead=%AddrFreeMem30,BYTE,=1;
+MemWrite=%AddrFreeMem29,1,BYTE;
+#ENDIF
+
+#EXECUTE=IsAerial;
+_IFMemRead=%AddrFreeMem30,BYTE,=1;
+MemWrite=%AddrFreeMem29,1,BYTE;
+#ENDIF
+
+#EXECUTE=IsStumble;
+_IFMemRead=%AddrFreeMem30,BYTE,=1;
+MemWrite=%AddrFreeMem29,1,BYTE;
+#ENDIF
+
+_IFMemRead=%AddrFreeMem29,BYTE,=1;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+end_IsCC;
+
+
+
+
+
+start_IsAerial; <-- debuff IDs need to be updated
+
+MemWrite=%AddrFreeMem30,0,BYTE;
+
+_IFTargetDebuffAlive=8218;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8219;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8676;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8635;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8636;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8637;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+end_IsAerial;
+
+
+
+
+start_IsStun; <-- debuff IDs need to be updated
+
+MemWrite=%AddrFreeMem30,0,BYTE;
+
+_IFTargetDebuffAlive=8218;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8219;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8676;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8635;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8636;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8637;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+end_IsStun;
+
+
+
+
+start_IsStumble; <-- debuff IDs need to be updated
+
+MemWrite=%AddrFreeMem30,0,BYTE;
+
+_IFTargetDebuffAlive=8218;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8219;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8676;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8635;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8636;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+_IFTargetDebuffAlive=8637;
+MemWrite=%AddrFreeMem30,1,BYTE;
+#ENDIF
+
+end_IsStumble;
+
+
+
+
+
+
+start_Potion;
+
+_IFMemRead=%AddrFreeMem4,BYTE,=1;
+MemPtrWrite=%PlayerBase,%OffsetAnim,300,WORD; <-- Activate NoAnim
+#ENDIF
+
+
+_MemPtrReadVar=%PlayerBase,%OffsetMaxMP,WORD,11; <-- saves max MP in %Var11
+_MemPtrReadVar=%PlayerBase,%OffsetMP,WORD,12; <-- saves current MP in %Var12
+_Calc11=%Var12/%Var11; <-- divides %Var12 trough %Var11 and saves the result in %Var11
+_Calc11=%Var11*100; <-- multiplies %Var11 with 100 and saves the result in %Var11
+MemWrite=%AddrFreeMem12,%Var11,FLOAT; <-- writes current mana percent value in %AddrFreeMem12
+MemWrite=%AddrFreeMem10,%Var3,WCHAR[1];
+
+_IFMemRead=%AddrFreeMem10,BYTE,65-122;
+_IFMemRead=%AddrFreeMem12,FLOAT,<50; <-- If mana below 50%
+#IF=%Timer=162000124,30000;
+Command=/Use %Var3;
+CreateTimer=162000124;
+#ENDIF
+
+
+_IFMemRead=%AddrFreeMem10,BYTE,65-122;
+_IFMemPtrRead=%PlayerBase,%OffsetPercentHP,BYTE,<40;
+#IF=%Timer=162000124,30000;
+Command=/Use %Var3;
+CreateTimer=162000124;
+#ENDIF
+
+end_Potion;
+
+
+start_ActivateLootPet;
+
+_IFSkillActive=50045;
+#ELSE
+UseID=50045;
+#ENDIF
+_IFSkillActive=50045;
+#ELSE
+UseID=50045;
+#ENDIF
+
+end_ActivateLootPet;
+
+
+start_ReplyWhispers;
+
+MemWrite=%AddrFreeMem19,%Var19,WCHAR[1];
+
+_IFMemRead=%AddrFreeMem19,BYTE,65-122;
+_SearchChatLog=\[charname:.*?] Whispers:;
+Delay=1000;
+SendKey=0x54; <-- Presses "T" in order to reply to whispers
+Delay=300;
+#ClearChatLog
+SendKey=%Var19;
+Delay=3000;
+SendKey=0x0D;
+Delay=250;
+#ENDIF
+
+end_ReplyWhispers;
